@@ -21,8 +21,8 @@ This project bypasses dependency bloating by structuring its entire footprint in
 arcade-game/
 ├── public/
 ├── src/
-│   ├── Arcade.jsx    # ~1,000+ lines of structural React components & AI logic
-│   ├── Arcade.css    # ~1,000+ lines of granular BEM cyberpunk layouts & keyframes
+│   ├── Arcade.jsx    #  Structural React components & AI logic
+│   ├── Arcade.css    #  Granular BEM cyberpunk layouts & keyframes
 │   ├── main.jsx      # Vite mounting entrypoint
 │   └── index.css     # Global reset baseline
 ├── package.json
