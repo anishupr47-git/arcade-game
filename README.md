@@ -1,16 +1,29 @@
-# React + Vite
+# ARCADE-GAME: Ultimate AI vs Human Gaming
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A massive, feature-rich application featuring an array of a classic board and matrix games powered by custom-built deterministic and heuristic AI algorithms. Built entirely with raw React.jsx and vanilla CSS, this project showcases high performance state management, complex algorithmic decision-making, and an immersive "Cyberpunk Glassmorphic" visuals aesthetic-all contained within a highly optimized architecture.
 
-Currently, two official plugins are available:
+# FEATURES
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The Arcade features a centralized dashboard that tracks lifetime statistics, toggles difficulty tiers, controls synthesized sound effects, and hosts two fully implemented games:
 
-## React Compiler
+* **Advanced TIC-TAC-TOE**
+* **CONNECT FOUR**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# TECH STACK & ARCHITECTURE
+* **FRONTEND LIBRARY** React 18+(Functional Components. Hooks, Context, `useReducer`)
+* **Styling** Pure Vanilla CSS (Custom Variables, Keyframe Animations, Flexbox/Grid Layouts)
+* **State Architecture:** A unified imutable reducer pattern managing modular complex states across all nested board layouts.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# PROJECT STRUCTURE
+This project bypasses dependency bloating by structuring its entire footprint into two core operational modules designed for rapid rendering and absolute control:
+ 
+```text
+arcade-game/
+├── public/
+├── src/
+│   ├── Arcade.jsx    # ~1,000+ lines of structural React components & AI logic
+│   ├── Arcade.css    # ~1,000+ lines of granular BEM cyberpunk layouts & keyframes
+│   ├── main.jsx      # Vite mounting entrypoint
+│   └── index.css     # Global reset baseline
+├── package.json
+└── README.md
