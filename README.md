@@ -1,29 +1,18 @@
-# ARCADE-GAME: Ultimate AI vs Human Gaming
+# ARCADE-GAME: The ultimate AI vs Human Gaming
 
-A massive, feature-rich application featuring an array of a classic board and matrix games powered by custom-built deterministic and heuristic AI algorithms. Built entirely with raw React.jsx and vanilla CSS, this project showcases high performance state management, complex algorithmic decision-making, and an immersive "Cyberpunk Glassmorphic" visuals aesthetic-all contained within a highly optimized architecture.
+This Website is an open source website in which single players can put and commit their time playing 2 brilliant games with AI. The game's are not only addictive and meant for fun only but also help people build their logical building and help the kill there time when they are alone. This project shows the ability for high state management and complex algorithms and decision making. 
+The Design is glassmorphic and arcade oriented to make sure it matches the vibe and the user has good view while playing. The sound effect also helps the user to be in the zone while playing the game. Different level of AI'S make people think more and make their logical building more nice in order to beat it. Although beating the max level seems impossible but with immense logic one might just do it.
 
-# FEATURES
+# Features
+This game has a centralized dashboard that tracks lifetime statistics, has difficulty tiers and host two fully implemented and furnished games.
+The games are:
+1) ADVANCED TIC-TAC-TOE.
+2) CONNECT FOUR.
 
-The Arcade features a centralized dashboard that tracks lifetime statistics, toggles difficulty tiers, controls synthesized sound effects, and hosts two fully implemented games:
+# TECH STACK AND ARCHITECTURE
+The core stack and architecture of this app revolves around React.JSX. React 18+(Functional Components. Hooks, Context, `useReducer`) were used for the core logic and for styling Pure Vanilla CSS as an external CSS was used.
 
-* **Advanced TIC-TAC-TOE**
-* **CONNECT FOUR**
+Overally the app is made with love and also made in order not just for the sake of building but so that logical and mathmatical building is developed and people who don't have any companion with them can enjoy and kill their time playing these 2 games and help them pass their boredom.
 
-# TECH STACK & ARCHITECTURE
-* **FRONTEND LIBRARY** React 18+(Functional Components. Hooks, Context, `useReducer`)
-* **Styling** Pure Vanilla CSS (Custom Variables, Keyframe Animations, Flexbox/Grid Layouts)
-* **State Architecture:** A unified imutable reducer pattern managing modular complex states across all nested board layouts.
 
-# PROJECT STRUCTURE
-This project bypasses dependency bloating by structuring its entire footprint into two core operational modules designed for rapid rendering and absolute control:
- 
-```text
-arcade-game/
-├── public/
-├── src/
-│   ├── Arcade.jsx    #  Structural React components & AI logic
-│   ├── Arcade.css    #  Granular BEM cyberpunk layouts & keyframes
-│   ├── main.jsx      # Vite mounting entrypoint
-│   └── index.css     # Global reset baseline
-├── package.json
-└── README.md
+
