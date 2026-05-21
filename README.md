@@ -12,7 +12,7 @@ The games are:
 # TECH STACK AND ARCHITECTURE
 The core stack and architecture of this app revolves around React.JSX. React 18+(Functional Components. Hooks, Context, `useReducer`) were used for the core logic and for styling Pure Vanilla CSS as an external CSS was used.
 
+# FINALLY
 Overally the app is made with love and also made in order not just for the sake of building but so that logical and mathmatical building is developed and people who don't have any companion with them can enjoy and kill their time playing these 2 games and help them pass their boredom.
-
-
+Beyond the brain workout, it was designed with deep empathy for those quiet moments in life. For anyone who might not have a companion around right now, these two games are here to step in as a welcoming friend helping to banish boredom, kill time productively, and bring a little spark of joy to your day.
 
