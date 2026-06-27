@@ -26,7 +26,7 @@ Open your terminal or command prompt, navigate to the folder where you want to s
 ```bash
 git clone [https://github.com/anishupr47-git/arcade-game.git](https://github.com/anishupr47-git/arcade-ga
 ```
-<img width="2560" height="1440" alt="Screenshot (391)" src="https://github.com/user-attachments/assets/49995f42-4740-46e5-adcf-bcb5dbe976e7" />
+
 <img width="2560" height="1291" alt="Screenshot (390)" src="https://github.com/user-attachments/assets/44265457-facd-4478-a464-a5ce0be27e99" />
 <img width="2560" height="1291" alt="Screenshot (389)" src="https://github.com/user-attachments/assets/aa320d24-738f-4b1d-b587-a817f9d67915" />
 <img width="2560" height="1298" alt="Screenshot (388)" src="https://github.com/user-attachments/assets/129282f8-d5cb-4d76-a79f-73beb4f4a787" />
