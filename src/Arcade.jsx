@@ -104,7 +104,7 @@ const checkWinTTT = (board,size,player)=>{
     return false;
 };
 
-const tttMinimax= (board,depth,isMaximizing,size,maxDepth) => {
+const tttMinimax= (board,depth,alpha,beta,isMaximizing,size,maxDepth) => {
     if(checkWinTTT(board,size,'O')) return 10 - depth;
     if(checkWinTTT(board,size,'X')) return depth - 10;
     if(!board.includes(null)) return 0;
@@ -115,9 +115,11 @@ const tttMinimax= (board,depth,isMaximizing,size,maxDepth) => {
         for (let i=0; i< board.length; i++){
             if(!board[i]){
                 board[i]='O';
-                let score = tttMinimax(board,depth + 1, false, size, maxDepth);
+                let score = tttMinimax(board,depth + 1, alpha, beta, false, size, maxDepth);
                 board[i] = null;
                 bestScore= Math.max(score, bestScore);
+                alpha = Math.max(alpha, bestScore);
+                if (beta <= alpha) break;
             }
         }
         return bestScore;
@@ -126,9 +128,11 @@ const tttMinimax= (board,depth,isMaximizing,size,maxDepth) => {
         for (let i=0; i< board.length; i++){
             if(!board[i]){
                 board[i]='X';
-                let score = tttMinimax(board,depth + 1, true, size, maxDepth);
+                let score = tttMinimax(board,depth + 1, alpha, beta, true, size, maxDepth);
                 board[i] = null;
                 bestScore= Math.min(score, bestScore);
+                beta = Math.min(beta, bestScore);
+                if (beta <= alpha) break;
             }
         }
         return bestScore;
@@ -155,15 +159,17 @@ const TicTacToe = ({dispatch,settings})=> {
         let move = -1;
         let b = [...board];
         let maxDepth = settings.difficulty === 'hard' ? 6 : settings.difficulty === 'medium' ? 2 : 0;
+        if (size === 4 && maxDepth > 4) maxDepth = 4;
+        if (size === 5 && maxDepth > 3) maxDepth = 3;
         
         let available = b.map((val, idx) => val === null ? idx : null).filter(val => val !== null);
-        if (maxDepth === 0 || (size > 3 && maxDepth < 4)) {
+        if (maxDepth === 0) {
            move = available[Math.floor(Math.random() * available.length)];
         } else {
           for (let i = 0; i < b.length; i++) {
             if (!b[i]) {
               b[i] = 'O';
-              let score = tttMinimax(b, 0, false, size, maxDepth);
+              let score = tttMinimax(b, 0, -Infinity, Infinity, false, size, maxDepth);
               b[i] = null;
               if (score > bestScore) {
                 bestScore = score;
@@ -408,10 +414,10 @@ const ConnectFour = ({dispatch, settings}) => {
             if(checkWinC4(newBoard,player)){
                 setWinner(player);
                 if (settings.sound) player === 1? AudioEngine.playWin(): AudioEngine.playLoss();
-                dispatch({type:'UPDATED_STATS', payload: {game: 'connectfour', result:player===1? 'wins':'losses'}});
+                dispatch({type:'UPDATE_STATS', payload: {game: 'connectfour', result:player===1? 'wins':'losses'}});
             } else if (getValidLoactionC4(newBoard).length ===0){
                 setWinner(3);
-                dispatch({type:'UPADTE_STATS', payload:{game:'connectfour', result:'draws'}});
+                dispatch({type:'UPDATE_STATS', payload:{game:'connectfour', result:'draws'}});
             } else {
                 setPlayerTurn(player===1?2:1);
             }
@@ -511,10 +517,9 @@ export default function Arcade(){
                     <select
                     value={state.settings.difficulty}
                     onChange={(e)=> dispatch({type: 'SET_DIFFICULTY', payload: e.target.value})}
-                    onChange={(e)=>dispatch({type:'SET_DIFFICULTY', payload: e.target.value})}
                     className="glass-select"
                     >
-                        <option value="essay">Novice AI</option>
+                        <option value="easy">Novice AI</option>
                         <option value="medium">Standard AI</option>
                         <option value="hard">Lethal AI</option>
                     </select>
